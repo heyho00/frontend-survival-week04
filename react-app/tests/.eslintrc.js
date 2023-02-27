@@ -1,3 +1,9 @@
 module.exports = {
-  extends: ['plugin:codeceptjs/recommended'],
+  env: {
+    jest: false,
+  },
+  extends: ['plugin:playwright/playwright-test'],
+  rules: {
+    'import/no-extraneous-dependencies': 'off',
+  },
 };

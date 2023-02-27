@@ -108,3 +108,6 @@ dist
 
 # Parcel
 .parcel-cache/
+
+# Playwright
+/test-results/
