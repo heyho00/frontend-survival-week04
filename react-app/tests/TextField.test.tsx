@@ -11,8 +11,8 @@ describe('TextField', () => {
   const setText = jest.fn();
 
   beforeEach(() => {
-    // setText.mockClear();
-    jest.clearAllMocks();
+    setText.mockClear();
+    // jest.clearAllMocks();
   });
 
   function renderTextField() {

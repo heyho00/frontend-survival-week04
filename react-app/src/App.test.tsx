@@ -1,21 +1,11 @@
-// import { render } from '@testing-library/react';
-// import App from './App';
-
-// describe('App ', () => {
-//   it('renders without crash', () => {
-//     render(<App />);
-//   });
-// });
-
-import { render, screen } from '@testing-library/react';
-import fixtures from '../fixtures';
+import { render, screen, waitFor } from '@testing-library/react';
 import App from './App';
 
-// jest.mock('./hooks/useFetchRestaurants.ts', () => () => fixtures.products);
-jest.mock('./hooks/useFetchRestaurants.ts');
-
-test('App', () => {
+test('App', async () => {
   render(<App />);
 
-  screen.getByText('메가반점');
+  await waitFor(() => {
+    screen.getByText('메가반점');
+    // 안에 있는 이게 될때까지 기다린다. 될때까지 확인한다라는 개념이라함.
+  });
 });

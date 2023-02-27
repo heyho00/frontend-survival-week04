@@ -7,7 +7,8 @@ export default function useFetchRestaurants() {
   useEffect(() => {
     fetch('http://localhost:3000/restaurants')
       .then((res) => res.json())
-      .then((data) => setRestaurants(data));
+      .then((data) => setRestaurants(data))
+      .catch((err) => console.log(err, 'error'));
   }, []);
 
   return restaurants;
